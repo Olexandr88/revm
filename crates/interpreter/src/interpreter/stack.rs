@@ -5,14 +5,14 @@ use std::vec::Vec;
 
 use super::StackTr;
 
-/// EVM interpreter stack limit.
+/// Maximum size of the EVM operand stack.
 pub const STACK_LIMIT: usize = 1024;
 
-/// EVM stack with [STACK_LIMIT] capacity of words.
+/// EVM operand stack with a fixed maximum capacity of [`STACK_LIMIT`] words.
 #[derive(Debug, PartialEq, Eq, Hash)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct Stack {
-    /// The underlying data of the stack.
+    /// Underlying storage for stack values.
     data: Vec<U256>,
 }
 
